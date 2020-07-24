@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+	function a(){
+		alert("button clicked");
+	}
+	function check(){
+		var x = f.id.value.length;
+		if(x==0){
+			alert("아이디를 입력하세요");
+			f.id.focus();
+			return
+		}else if(x<6){
+			alert("아이디를 6글자 이상으로 작성하세요");
+			f.id.focus();
+			return
+		}
+		if(f.pwd.value.length<6){
+			alert("패스워드 6글자 이상으로 작성하세요");
+			f.id.focus();
+			return
+		}
+		
+		var html = "회원가입정보\n";
+		html += "id:"+f.id.value+"\n";
+		html += "pwd:"+f.pwd.value+"\n";
+		var h = "";
+		for(i=0;i<f.hobby.length;i++){
+			if(f.hobby[i].checked){
+				h+=f.hobby[i].value+" / ";				
+			}
+		}
+		html += "hobby:"+h+"\n";
+		var g = f.gender[0].checked ? "f":"m";
+		html += "gender:"+g+"\n";
+		html += "grade:"+f.grade.options[f.grade.selectedIndex].value+"\n";  //select box는 options라는 이름의 배열을 갖는다
+		html += "msg:"+f.msg.value;                                          //selectedIndex는 선택된 옵션의 인덱스
+		alert(html);
+		res = confirm("정보가 맘에 드냐?");  //yes or no
+		if(res){
+			f.submit();  // 정보를 전송해줌(요청)
+		}else{
+			alert("가입이 취소됨");
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<form action="../a.jsp" method="post" name="f">
+		id:<input type="text" name="id"><br/>
+		pwd:<input type="password" name="pwd"><br/>
+		hobby:<input type="checkbox" name="hobby" value="1">영화
+			<input type="checkbox" name="hobby" value="2">여행
+			<input type="checkbox" name="hobby" value="3">야구
+			<input type="checkbox" name="hobby" value="4">유투브시청<br/>
+		gender:<input type="radio" name="gender" value="f">여자
+			<input type="radio" name="gender" value="m" checked>남자<br/>
+		grade:<select name="grade">
+			<option value="g1">1학년</option>
+			<option value="g2">2학년</option>
+			<option value="g3">3학년</option>
+			<option value="g4">4학년</option>		
+		</select><br/>
+		가입인사:<textarea rows="5" cols="20" name="msg"></textarea><br/> 
+		<input type="button" value="가입" onclick="check()">
+		
+		<input type="reset" value="초기화버튼">
+		<input type="hidden" name="type" value="join">   <!-- 프로그램 흐름상 필요한 데이터를 전송할때 사용한다 -->	
+	</form>	
+	
+	<!-- <form action="">
+		<input type="button" value="click" onclick="a()">
+	</form> -->
+</body>
+</html>
+
+
+<!-- 이벤트                             이벤트핸들러등록속성이름=>on이벤트이름
+click		 							
+doubleclick
+focus(집중받을때)
+blur(focus를 잃었을때)
+submit(서버로 전송)
+mouseover(특정 영역에 마우스가 올라올때)
+mouseout(특정 영역에 마우스가 없어질때)
+change(입력양식에서 입력한 값이 변경되었을때)
+keyup(키보드 땠을때)
+keydown(키보드 눌렀을때) -->
+
+
+
+

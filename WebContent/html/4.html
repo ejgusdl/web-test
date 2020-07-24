@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body> 
+<!-- 	<form action="서버페이지" method="전송방식"></form> -->
+<!-- 	get: url 뒤에 폼데이터를 붙여서 이동. 길이에 제약. 보안상 안좋음 -->
+<!-- 	post: 헤더에 담아 감. 길이에 제약이 없고 보안상 좋음. 한글이 안깨짐 -->
+	<form action="../a.jsp" method="post">
+		id:<input type="text" name="id"><br/>
+		pwd:<input type="password" name="pwd"><br/>
+		hobby:<input type="checkbox" name="hobby" value="1">영화
+			<input type="checkbox" name="hobby" value="2">여행
+			<input type="checkbox" name="hobby" value="3">야구
+			<input type="checkbox" name="hobby" value="4">유투브시청<br/>
+		gender:<input type="radio" name="gender" value="f">여자
+			<input type="radio" name="gender" value="m">남자<br/>
+		grade:<select name="grade">
+			<option value="g1">1학년</option>
+			<option value="g2">2학년</option>
+			<option value="g3">3학년</option>
+			<option value="g4">4학년</option>		
+		</select><br/>
+		가입인사:<textarea rows="5" cols="20" name="msg"></textarea><br/>
+		<input type="button" value="일반버튼">
+		<input type="submit" value="전송버튼">
+		<input type="reset" value="초기화버튼">
+		<input type="hidden" name="type" value="join">   <!-- 프로그램 흐름상 필요한 데이터를 전송할때 사용한다 -->
+		
+	</form>	
+</body>
+</html>

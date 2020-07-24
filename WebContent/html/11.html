@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = ['img2.jpg','naver.jpg','2.jpg','3.jpg','4.jpg'];
+	index = 0;
+	
+	function prev(){
+		if(index<=0){
+			alert("사진없음");
+			return
+		}
+		index--;
+		document.imgx.src = '../img/'+arr[index%5];
+	}
+	function next(){
+		index++;
+		document.imgx.src = '../img/'+arr[index%5];
+	}
+	
+	
+	
+	
+	/* window.onload=function(){
+		//익명함수 페이지가 시작되자마자 실행하는 함수
+		
+	} */
+</script>
+</head>
+<body>
+	<img src="../img/img2.jpg" name="imgx"><br/>
+	<input type="button" value="prev" onclick="prev()">
+	<input type="button" value="next" onclick="next()">
+		
+</body>
+</html>

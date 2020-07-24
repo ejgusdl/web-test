@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="test.js">
+	var x=10; //전역변수
+	function test(){
+		var x = 20; //지역변수
+		y = 100; //전역변수
+		alert("x:"+x+"/y:"+y);		
+	}
+	function test1(){		
+		alert("x:"+x+"/y:"+y);	
+	}
+</script> <!-- 여기 태그에다가 먼저 작성한 test.js의 코드를 불러온다 함수는 헤드부분에 작성-->
+</head>
+<body>
+	<script type="text/javascript">
+		f1();
+		res = f2(2,3);
+		document.write("2+3="+res);
+		test();
+		test1();
+		
+	</script>
+</body>
+</html>

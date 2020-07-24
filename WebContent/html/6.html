@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<!-- <style type="text/css">
+	body{
+		background-image: url("../img/img2.jpg");
+	}
+</style> -->
+</head>
+<body>
+	<script type="text/javascript">
+		/* document.write("body hello<br>");
+		var a = 10;
+		document.write("a="+a+"<br>");
+		b="hello";
+		document.write("b="+b+"<br>");
+		msg = prompt("계산하고 싶은 수식을 입력하시오"); //입력박스 창
+		res = eval(msg); //문자열로 된 수식을 숫자로 바꿔서 자동 계산
+		document.write(msg+"="+res+"<br>");
+		alert("계산완료"); //알림창 */
+		document.write("<table border='1'><tr>");
+		for(i=2;i<=9;i++){
+			document.write("<td>");
+			for(j=1;j<=9;j++){
+				document.write(i+"*"+j+"="+(i*j)+"<br>");
+			}
+			document.write("</td>");
+		}
+		document.write("</tr></table>");
+	</script>
+	
+</body>
+</html>

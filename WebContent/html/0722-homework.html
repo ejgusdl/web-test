@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+	#table{
+		background-color:green;
+	}
+	#cal{
+		background-color:white;
+	}
+	.but{
+		width:50px;
+		height:50px;
+	}
+	#display{
+		width:190px;
+		height:40px;
+		margin:0 5px;
+		text-align:right;
+	}
+</style>
+<script>
+	function numbers(i){
+		var res = t.dis.value;
+		if(res==0){
+			t.dis.value=i;
+		
+		}else{
+		
+			t.dis.value+=i;	
+		}
+	}
+	function reset1(){
+		t.dis.value=0;
+	}
+	var num1=0,num2=0;
+	var op = '';
+	function calculates(o){
+		op=o;
+		num1 = t.dis.value;
+		reset1();
+	}
+	function result1(){
+		num2=t.dis.value;
+		res1 = eval(num1+op+num2);
+		t.dis.value=res1;
+	}
+	
+	
+	function number(e){	
+		var val = document.getElementById('display').value; 
+		console.log(e.value);
+		if(val == "0"){
+			document.getElementById('display').value=e.value;
+		}else{
+			document.getElementById('display').value=val+e.value;
+		}		
+	}
+	function calculate(e){
+		var val = document.getElementById('display').value;
+		if(val == "0"){
+			document.getElementById('display').value="0";
+		}else{
+			document.getElementById('display').value=val+e.value;
+		}		
+	}
+	function reset(){
+		document.getElementById('display').value="0";
+	}
+	function result(){
+		var val = document.getElementById('display').value;
+		var result = eval(val);
+		document.getElementById('display').value=result;
+	}
+</script>
+</head>
+<body>
+	<table id="table">
+		<tr>
+			<td colspan="4" height="50px" id="cal"><input type="text" id="display" value="0" ></td>
+		</tr>
+		<tr>
+			<td><input class="but" type="button" value="1" onclick="number(this)"></td>
+			<td><input class="but" type="button" value="2" onclick="number(this)"></td>
+			<td><input class="but" type="button" value="3" onclick="number(this)"></td>
+			<td><input class="but" type="button" value="+" onclick="calculate(this)"></td>
+		</tr>
+		<tr>
+			<td><input class="but" type="button" value="4" onclick="number(this)"></td>
+			<td><input class="but" type="button" value="5" onclick="number(this)"></td>
+			<td><input class="but" type="button" value="6" onclick="number(this)"></td>
+			<td><input class="but" type="button" value="-" onclick="calculate(this)"></td>
+		</tr>
+		<tr>
+			<td><input class="but" type="button" value="7" onclick="number(this)"></td>
+			<td><input class="but" type="button" value="8" onclick="number(this)"></td>
+			<td><input class="but" type="button" value="9" onclick="number(this)"></td>
+			<td><input class="but" type="button" value="*" onclick="calculate(this)"></td>
+		</tr>
+		<tr>
+			<td><input class="but" type="button" value="0" onclick="number(this)"></td>
+			<td><input class="but" type="button" value="c" onclick="reset1()"></td>
+			<td><input class="but" type="button" value="=" onclick="result1()"></td>
+			<td><input class="but" type="button" value="/" onclick="calculate(this)"></td>
+		</tr>
+		
+	
+	</table>
+	<br/><br/>
+	<form action="" name="t">
+	<table id="table">
+		<tr>
+			<td colspan="4" height="50px" id="cal"><input type="text" id="display" name="dis" value="0" ></td>
+		</tr>
+		<tr>
+			<td><input class="but" type="button" value="1" onclick="numbers(1)"></td>
+			<td><input class="but" type="button" value="2" onclick="numbers(2)"></td>
+			<td><input class="but" type="button" value="3" onclick="numbers(3)"></td>
+			<td><input class="but" type="button" value="+" onclick="calculates('+')"></td>
+		</tr>
+		<tr>
+			<td><input class="but" type="button" value="4" onclick="numbers(4)"></td>
+			<td><input class="but" type="button" value="5" onclick="numbers(5)"></td>
+			<td><input class="but" type="button" value="6" onclick="numbers(6)"></td>
+			<td><input class="but" type="button" value="-" onclick="calculates('-')"></td>
+		</tr>
+		<tr>
+			<td><input class="but" type="button" value="7" onclick="numbers(7)"></td>
+			<td><input class="but" type="button" value="8" onclick="numbers(8)"></td>
+			<td><input class="but" type="button" value="9" onclick="numbers(9)"></td>
+			<td><input class="but" type="button" value="*" onclick="calculates('*')"></td>
+		</tr>
+		<tr>
+			<td><input class="but" type="button" value="0" onclick="numbers(0)"></td>
+			<td><input class="but" type="button" value="c" onclick="reset1()"></td>
+			<td><input class="but" type="button" value="=" onclick="result1()"></td>
+			<td><input class="but" type="button" value="/" onclick="calculates('/')"></td>
+		</tr>
+		
+	
+	</table>
+	</form>
+</body>
+</html>
