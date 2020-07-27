@@ -14,6 +14,8 @@
 </head>
 <body>
 	<h3>방명록</h3>
+<!-- 	el은 servlet에서 setAttribute한 객체를 다이렉트로 접근.페이지에서 자바코드를 쓰지않아서 깔끔(vo(dto)에 디폴트 생성자,setter,getter를 작성) -->
+<!-- 	<a href=""${pageContext.request.contextPath}/guestbook/Controller?cmd=writeForm">글작성</a><br/> -->
 	<a href="/web0722/guestbook/Controller?cmd=writeForm">글작성</a><br/>
 	<table border="1">
 		<form action="" method="post" name="f">

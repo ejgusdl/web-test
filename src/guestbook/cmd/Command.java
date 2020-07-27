@@ -10,6 +10,7 @@ public abstract class Command { //추상메서드 포함
 	protected HttpServletRequest req;
 	protected HttpServletResponse res;
 	
+	//명령을 실행
 	public abstract void execute(HttpServletRequest req,HttpServletResponse res);//요청을 실행
 	
 	public void forward(String url){

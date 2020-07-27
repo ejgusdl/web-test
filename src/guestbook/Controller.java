@@ -19,6 +19,7 @@ import guestbook.cmd.Command;
  */
 @WebServlet(urlPatterns="/guestbook/Controller", 
 initParams={@WebInitParam(name="mapping",value="/WEB-INF/cmd.properties")})
+//이 servlet의 초기화 파라메터
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private Properties cmds;
